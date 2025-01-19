@@ -15,3 +15,12 @@ def author(request):
 def posts(request):
     posts = Post.objects.all()
     return render(request, "posts_page.html", {"posts": posts})
+
+def get_post_by_id(request, post_id):
+    post = Post.objects.get(id = post_id)
+    cont = {
+        "post": post
+    }
+    return render(
+        request, "post_id_page.html", cont
+    )
