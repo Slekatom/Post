@@ -5,6 +5,7 @@ class Author(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=70)
     email = models.EmailField()
+    bio = models.TextField()
     
     def __str__(self):
         return f"{self.last_name} - {self.first_name}"
