@@ -13,7 +13,7 @@ def author(request):
     authors = Author.objects.all()
     return render(request, "authors_page.html", {"authors": authors})
 def posts(request):
-    posts = Post.objects.all()
+    posts = Post.objects.filter(published = True)
     return render(request, "posts_page.html", {"posts": posts})
 
 def get_post_by_id(request, post_id):
