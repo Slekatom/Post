@@ -24,3 +24,12 @@ def get_post_by_id(request, post_id):
     return render(
         request, "post_id_page.html", cont
     )
+def get_post_by_author(request, author):
+    posts = Post.objects.filter(author__first_name = author)
+    cont = {
+        "posts": posts,
+        "author": author
+    }
+    return render(
+        request, "post_author_page.html", cont
+    )
